@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "Augstina";
+    src: url('../../public/fonts/Agustina.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
