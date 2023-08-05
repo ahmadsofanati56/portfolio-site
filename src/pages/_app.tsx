@@ -3,10 +3,10 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
-import NavBar from "../containers/navBar";
 
 import localFont from "@next/font/local";
 import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "~/containers/NavBar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
