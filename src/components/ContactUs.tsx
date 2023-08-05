@@ -1,0 +1,100 @@
+import { useRef, useState } from "react";
+import { IconType } from "react-icons";
+import {
+  BsEnvelope,
+  BsEnvelopeFill,
+  BsFillPersonFill,
+  BsMailbox,
+} from "react-icons/bs";
+import classnames from "classnames";
+
+import { VscPerson, VscPersonAdd, VscThumbsup } from "react-icons/vsc";
+import React from "react";
+import {
+  Alert,
+  Button,
+  Card,
+  CardBody,
+  Col,
+  Container,
+  FormGroup,
+  Input,
+  InputGroup,
+  InputGroupText,
+  Row,
+} from "reactstrap";
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const data = new FormData(e.currentTarget);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "post",
+      body: new URLSearchParams(data as any),
+    });
+    if (!response.ok) {
+      throw new Error(`Invalid response: ${response.status}`);
+    }
+    alert("Thanks for contacting us, we will get back to you soon!");
+  } catch (err) {
+    console.error(err);
+    alert("We can't submit the form, try again later?");
+  }
+}
+export const ContactUs = () => {
+  const form = useRef<HTMLFormElement>(null);
+  return (
+    <>
+      <section className="section section-lg section-shaped my-20">
+        <form ref={form} onSubmit={handleSubmit}>
+          <Container className="d-flex justify-center  ">
+            <Card className="  w-full shadow-lg sm:w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
+              <CardBody className=" w-full  p-4">
+                <Col className="p-3">
+                  <div>
+                    <div className="text-2xl drop-shadow-sm">
+                      Want to work with me?
+                    </div>
+                    <div className="text-md ml-1 opacity-60">
+                      Reach out to me using the form below
+                    </div>
+                  </div>
+                  <div className=" my-10 ">
+                    <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
+                      <BsFillPersonFill className="absolute ml-3 h-5 w-5" />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        className="max-w-xlg input mt-1 w-full pl-10 pr-3 shadow-md "
+                      />
+                    </div>
+                    <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
+                      <BsEnvelopeFill className="absolute ml-3 mt-3 h-5 w-5" />
+                      <input
+                        type="text"
+                        name="email"
+                        placeholder="Email address"
+                        className="max-w-xlg input mt-3 w-full pl-10 pr-3 shadow-md"
+                      />
+                    </div>
+
+                    <textarea
+                      name="message"
+                      className="textarea mt-3 w-full shadow-md"
+                      placeholder="Type a message..."
+                    ></textarea>
+                    <div className="mt-4 rounded-md bg-black opacity-90 ">
+                      <button className=" btn w-full p-0  " type="submit">
+                        <b className="text-white">Send Message</b>
+                      </button>
+                    </div>
+                  </div>
+                </Col>
+              </CardBody>
+            </Card>
+          </Container>
+        </form>
+      </section>
+    </>
+  );
+};
