@@ -6,7 +6,7 @@ import "~/styles/globals.css";
 
 import localFont from "@next/font/local";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "~/containers/NavBar";
+import NavBar from "~/Containers/navBar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,

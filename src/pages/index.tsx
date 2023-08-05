@@ -3,12 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "reactstrap";
 import { ContactUs } from "~/components/ContactUs";
-import { Education } from "~/containers/Education";
-import { Proficiency } from "~/containers/Proficiency";
-import Projects from "~/containers/Projects";
-import { Feedbacks } from "~/containers/feedbacks";
-import { Greetings } from "~/containers/greetings";
-import Skills from "~/containers/skills";
+import { Education } from "~/Containers/Education";
+import { Proficiency } from "~/Containers/Proficiency";
+import Projects from "~/Containers/Projects";
+import { Feedbacks } from "~/Containers/feedbacks";
+import { Greetings } from "~/Containers/greetings";
+import Skills from "~/Containers/skills";
 import { api } from "~/utils/api";
 
 export default function Home() {
