@@ -3,8 +3,10 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
 import "~/styles/globals.css";
-import { NavBar } from "~/components/NavBar";
+import { NavBar } from "~/containers/NavBar";
+
 import localFont from "@next/font/local";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -12,10 +14,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <div className="m4-52 container ml-52">
-        <NavBar />
-        <Component {...pageProps} />{" "}
-      </div>
+      <NavBar />
+      <Component {...pageProps} />{" "}
     </SessionProvider>
   );
 };
