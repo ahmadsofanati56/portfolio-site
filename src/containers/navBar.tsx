@@ -11,7 +11,7 @@ const agustina = localFont({
   ],
   variable: "--font-agustina",
 });
-export default function NavBar() {
+export default function Navbar() {
   return (
     <Container className="mx-32">
       <div className="navbar bg-base-100">

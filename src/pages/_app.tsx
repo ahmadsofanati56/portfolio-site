@@ -5,8 +5,8 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
 import localFont from "@next/font/local";
+import Navbar from "~/Containers/navbar.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "~/Containers/navBar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -14,7 +14,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <NavBar />
+      <Navbar />
       <Component {...pageProps} />{" "}
     </SessionProvider>
   );
