@@ -7,7 +7,7 @@ import "~/styles/globals.css";
 import localFont from "@next/font/local";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "~/Containers/navbar";
+import NavBar from "../containers/navbar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -15,7 +15,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Navbar />
+      <NavBar />
       <Component {...pageProps} />{" "}
     </SessionProvider>
   );
