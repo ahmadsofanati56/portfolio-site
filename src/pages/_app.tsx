@@ -5,8 +5,9 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
 import localFont from "@next/font/local";
-import Navbar from "~/Containers/navbar.tsx";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "~/Containers/navbar";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
