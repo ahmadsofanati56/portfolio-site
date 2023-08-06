@@ -3,7 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "reactstrap";
 import { ContactUs } from "~/components/ContactUs";
-import SEO from "~/components/SEO";
+import Seo from "~/components/SEO";
+
 import { Education } from "~/containers/Education";
 import { Proficiency } from "~/containers/Proficiency";
 import Projects from "~/containers/Projects";
@@ -15,7 +16,7 @@ import { api } from "~/utils/api";
 export default function Home() {
   return (
     <>
-      <SEO />
+      <Seo />
 
       <Greetings />
       <Skills />
