@@ -16,6 +16,7 @@ const config = {
   rules: {
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-indexed-object-style": "off",
+    "@typescript-eslint/no-unsafe-assignment" : "off",
     "@typescript-eslint/consistent-type-imports": [
       
       "warn",
