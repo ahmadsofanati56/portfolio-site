@@ -27,9 +27,9 @@ export const openSource = {
 export const contact = {};
 
 export const socialLinks: SocialLinksType = {
-  linkedin: "https://www.linkedin.com/in/1hanzla100/",
+  linkedin: "https://www.linkedin.com/in/ahmad-sofanati-81536b20a/",
   github: "https://github.com/ahmadsofanati56",
-  instagram: "https://www.instagram.com/__hanzla100",
+  instagram: "https://www.instagram.com/ahmadsofanati/",
 };
 
 export const skillsSection: SkillsSectionType = {

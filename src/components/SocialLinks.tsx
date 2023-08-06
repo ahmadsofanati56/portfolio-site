@@ -11,7 +11,7 @@ export const SocialLinks = () => {
           color="dark"
           rel="noopener"
           aria-label="Github"
-          href={socialLinks.url}
+          href={socialLinks.github}
           target="_blank"
         >
           <i className="felx-col flex h-full  items-center justify-center align-middle">

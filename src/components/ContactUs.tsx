@@ -24,15 +24,27 @@ import {
   InputGroupText,
   Row,
 } from "reactstrap";
+import { useForm } from "react-hook-form";
 
 export const ContactUs = () => {
+  function Error({ message }: { message: string }) {
+    return (
+      <div className="rounded  border border-red-600 bg-red-50 p-1 text-red-600">
+        {message}
+      </div>
+    );
+  }
   const form = useRef<HTMLFormElement>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = () => {
     let data = {
       name,
       email,
@@ -60,7 +72,7 @@ export const ContactUs = () => {
   return (
     <>
       <section className="section section-lg section-shaped my-20">
-        <form ref={form}>
+        <form ref={form} onSubmit={handleSubmit(onSubmit)}>
           <Container className="d-flex justify-center  ">
             <Card className="  w-full shadow-lg sm:w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
               <CardBody className=" w-full  p-4">
@@ -77,6 +89,9 @@ export const ContactUs = () => {
                     <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
                       <BsFillPersonFill className="absolute ml-3 h-5 w-5" />
                       <input
+                        {...register("name", {
+                          required: { value: true, message: "Name Required" },
+                        })}
                         type="text"
                         name="name"
                         placeholder="Your name"
@@ -90,9 +105,12 @@ export const ContactUs = () => {
                     <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
                       <BsEnvelopeFill className="absolute ml-3 mt-3 h-5 w-5" />
                       <input
+                        {...register("email", {
+                          required: { value: true, message: "Name Required" },
+                          pattern: { value: /.+@.+/, message: "Invalid Email" },
+                        })}
                         type="text"
                         name="email"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         required
                         placeholder="Email address"
                         onChange={(e) => {
@@ -103,6 +121,9 @@ export const ContactUs = () => {
                     </div>
 
                     <textarea
+                      {...register("message", {
+                        required: { value: true, message: "Name Required" },
+                      })}
                       name="message"
                       className="textarea mt-3 w-full text-gray-400 shadow-md focus-within:text-gray-600 "
                       required
@@ -112,17 +133,11 @@ export const ContactUs = () => {
                       }}
                     ></textarea>
                     <div className="mt-4 rounded-md bg-black  opacity-90 ">
-                      <input
-                        type="submit"
-                        className="btn w-full text-white"
-                        onClick={(e) => {
-                          handleSubmit(e);
-                        }}
-                      />
+                      <input type="submit" className="btn w-full text-white" />
                       {/* <button
                         className=" btn w-full p-0  "
                         type="submit"
-                        onClick={(e) => handleSubmit}
+                        onClick={(e) => onSubmit}
                       >
                         <b className="text-white">Send Message</b>
                       </button> */}
