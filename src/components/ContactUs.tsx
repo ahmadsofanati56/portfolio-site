@@ -99,6 +99,7 @@ export const ContactUs = () => {
                           setName(e.target.value);
                         }}
                         className="max-w-xlg input mt-1 w-full pl-10 pr-3 shadow-md "
+                        value={name}
                         required
                       />
                     </div>
@@ -111,6 +112,7 @@ export const ContactUs = () => {
                         })}
                         type="text"
                         name="email"
+                        value={email}
                         required
                         placeholder="Email address"
                         onChange={(e) => {
@@ -128,6 +130,7 @@ export const ContactUs = () => {
                       className="textarea mt-3 w-full text-gray-400 shadow-md focus-within:text-gray-600 "
                       required
                       placeholder="Type a message..."
+                      value={message}
                       onChange={(e) => {
                         setMessage(e.target.value);
                       }}
