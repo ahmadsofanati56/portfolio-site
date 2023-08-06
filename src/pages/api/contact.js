@@ -1,5 +1,7 @@
-const express = require('express');
 
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 export default function (req, res) {
   require('dotenv').config()
 

@@ -44,14 +44,14 @@ export const ContactUs = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = () => {
-    let data = {
+  const onSubmit = async () => {
+    const data = {
       name,
       email,
       message,
     };
 
-    fetch("/api/contact", {
+    await fetch("/api/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -72,7 +72,7 @@ export const ContactUs = () => {
   return (
     <>
       <section className="section section-lg section-shaped my-20">
-        <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+        <form ref={form} onSubmit={void handleSubmit(onSubmit)}>
           <Container className="d-flex justify-center  ">
             <Card className="  w-full shadow-lg sm:w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
               <CardBody className=" w-full  p-4">

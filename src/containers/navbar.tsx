@@ -3,6 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import localFont from "@next/font/local";
 import { Container } from "reactstrap";
+import Link from "next/link";
 const agustina = localFont({
   src: [
     {
@@ -16,9 +17,9 @@ export default function NavBar() {
     <Container className="mx-32">
       <div className="navbar bg-base-100">
         <div className={`flex-1 ${agustina.variable} font-sans text-3xl`}>
-          <a href="/" className="text-black no-underline opacity-80">
+          <Link href="/" className="text-black no-underline opacity-80">
             Ahmad Sofanati
-          </a>
+          </Link>
         </div>
         <div className=" flex-none">
           <ul className="menu menu-horizontal px-1 ">

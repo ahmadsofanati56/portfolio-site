@@ -154,9 +154,6 @@ export const feedbacks: FeedbackType[] = [
   },
 ];
 
-// option to hide or show the ContactUs component
-export const showContactUs: boolean = true;
-
 // See object prototype on /types/section.ts page
 export const seoData: SEODataType = {
   title: "Ahmad Sofanati",
