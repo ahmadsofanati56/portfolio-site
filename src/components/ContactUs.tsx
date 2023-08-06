@@ -133,7 +133,10 @@ export const ContactUs = () => {
                       }}
                     ></textarea>
                     <div className="mt-4 rounded-md bg-black  opacity-90 ">
-                      <input type="submit" className=" btn w-full text-white" />
+                      <input
+                        type="submit"
+                        className=" btn w-full text-white outline-none focus:border-none focus-visible:outline-none"
+                      />
                       {/* <button
                         className=" btn w-full p-0  "
                         type="submit"
