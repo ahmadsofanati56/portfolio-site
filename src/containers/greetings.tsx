@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Col, Container, Row } from "reactstrap";
 import { SocialLinks } from "~/components/SocialLinks";
 import { LiaFile } from "react-icons/lia";
-import GreetingLottie from "~/components/displayLottie";
 import codingData from "../../public/images/lottie/coding.json";
 import { useEffect } from "react";
 
