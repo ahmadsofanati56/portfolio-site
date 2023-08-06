@@ -72,7 +72,7 @@ export const ContactUs = () => {
   return (
     <>
       <section className="section section-lg section-shaped my-20">
-        <form ref={form} onSubmit={void handleSubmit(onSubmit)}>
+        <form ref={form} onSubmit={handleSubmit(onSubmit)}>
           <Container className="d-flex justify-center  ">
             <Card className="  w-full shadow-lg sm:w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
               <CardBody className=" w-full  p-4">
