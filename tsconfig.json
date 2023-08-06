@@ -22,6 +22,8 @@
     }
   },
   "include": [
+    "src",
+    "src/pages/api",
     ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",

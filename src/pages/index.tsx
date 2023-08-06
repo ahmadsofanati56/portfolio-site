@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "reactstrap";
 import { ContactUs } from "~/components/ContactUs";
-import Seo from "../components/SEO";
+import Seo from "../components/Seo";
 
 import { Education } from "~/containers/Education";
 import { Proficiency } from "~/containers/Proficiency";
