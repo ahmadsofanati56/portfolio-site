@@ -15,10 +15,8 @@ export default function NavBar() {
   return (
     <Container className="mx-32">
       <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a
-            className={`btn btn-ghost text-xl normal-case ${agustina.variable} font-sans `}
-          >
+        <div className={`flex-1 ${agustina.variable} font-sans text-3xl`}>
+          <a href="/" className="text-black no-underline opacity-80">
             Ahmad Sofanati
           </a>
         </div>

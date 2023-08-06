@@ -14,11 +14,14 @@ export const ProjectsCard = ({ name, desc, github, link }: ProjectType) => {
                 <h3>{name}</h3>
                 <p className="description mt-3">{desc}</p>
                 {github ? (
-                  <button className="btn btn-circle bg-black  ">
-                    <div className="d-flex justify-center ">
-                      <VscGithub className=" fill-white " />
-                    </div>
-                  </button>
+                  <a href={github} target="_blank">
+                    {" "}
+                    <button className="btn btn-circle bg-black">
+                      <div className="d-flex justify-center ">
+                        <VscGithub className=" fill-white " />
+                      </div>
+                    </button>
+                  </a>
                 ) : null}
               </div>
             </div>

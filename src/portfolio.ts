@@ -21,18 +21,15 @@ export const greetings: GreetingsType = {
 };
 
 export const openSource = {
-  githubUserName: "1hanzla100",
+  githubUserName: "ahmadsofanati56",
 };
 
 export const contact = {};
 
 export const socialLinks: SocialLinksType = {
-  url: "https://1hanzla100.github.io/",
   linkedin: "https://www.linkedin.com/in/1hanzla100/",
-  github: "https://github.com/1hanzla100",
+  github: "https://github.com/ahmadsofanati56",
   instagram: "https://www.instagram.com/__hanzla100",
-  facebook: "https://www.facebook.com/1hanzla100",
-  twitter: "https://twitter.com/1hanzla100",
 };
 
 export const skillsSection: SkillsSectionType = {
@@ -67,19 +64,14 @@ export const skillsSection: SkillsSectionType = {
         skillName: "Tailwind Css",
         iconifyTag: "vscode-icons:file-type-tailwind",
       },
-
-      {
-        skillName: "NPM",
-        iconifyTag: "logos:npm-icon",
-      },
     ],
   },
 };
 
 export const SkillBars: SkillBarsType[] = [
   {
-    Stack: "Frontend/Design", //Insert stack or technology you have experience in
-    progressPercentage: "90", //Insert relative proficiency in percentage
+    Stack: "Frontend/Design",
+    progressPercentage: "90",
   },
   {
     Stack: "Backend",
@@ -96,12 +88,7 @@ export const educationInfo: EducationType[] = [
     schoolName: "SVU University",
     subHeader: "Information Technology Engineering ",
     duration: "September 2020 - April 2025",
-    desc: "Participated in the research of XXX and published 3 papers.",
-    grade: "Grade A",
-    descBullets: [
-      "Lorem ipsum dolor sit amet, consectetur adipdfgiscing elit",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    ],
+    desc: "Still studying ITE in the SVU",
   },
 ];
 
@@ -143,37 +130,27 @@ export const experience: ExperienceType[] = [
 export const projects: ProjectType[] = [
   {
     name: "developer-portfolio",
-    desc: "Software Developer Portfolio Template built with react.js and next.js bootstrap that helps you showcase your work and skills as a software developer.",
-    github: "https://github.com/1hanzla100/developer-portfolio",
-    link: "https://developer-portfolio-1hanzla100.vercel.app/",
+    desc: "Software Developer Portfolio Template built with next.js and tailwind that helps you showcase your work and skills as a software developer.",
+    github: "https://github.com/ahmadsofanati56/portfolio",
+    // link: "https://developer-portfolio-1hanzla100.vercel.app/",
   },
   {
-    name: "AtlasMart",
-    desc: "With Atlas Mart, it’s easy to find the products with the best price and ship them straight to your door.",
-    github: "https://github.com/1hanzla100/Django-React-Marketplace",
-  },
-  {
-    name: "Technota (Forum)",
-    desc: "Get hands-on experience in technical skills with Technota",
-    github: "https://github.com/1hanzla100/django-react-forum",
-  },
-  {
-    name: "Shopaza (Ecommerce)",
-    desc: "Now your reach to all your favorite entertainment and luxury items is just one touch apart",
-    github: "https://github.com/1hanzla100/Django-ecommerce",
+    name: "Twitter Clone",
+    desc: "full-stack application developed with the next.js, prisma, tRPC and tailwind CSS",
+    github: "https://github.com/ahmadsofanati56/twitter-clone-app",
   },
 ];
 
 export const feedbacks: FeedbackType[] = [
   {
-    name: "John Smith",
+    name: "Lucas",
     feedback:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, vel illo. Eum magnam beatae ratione eos natus accusamus unde pariatur fugiat at facilis, modi molestiae? Labore odio sit eligendi. Tenetur.",
+      "I highly recommend Ahmad to anyone in need of a skilled and dedicated fullstack web developer. his talent, professionalism, and commitment to delivering excellence are truly commendable. I'm grateful to have had the opportunity to work with Ahmad, and I look forward to collaborating with him again in the future.",
   },
   {
-    name: "John Smith",
+    name: "Sophia",
     feedback:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, vel illo. Eum magnam beatae ratione eos natus accusamus unde pariatur fugiat at facilis, modi molestiae? Labore odio sit eligendi. Tenetur.",
+      "Working alongside Ahmad was a delightful experience, as he consistently met project deadlines and exceeded my expectations. his commitment to producing high-quality work, combined with his exceptional problem-solving skills, made him an invaluable asset to my project",
   },
 ];
 
@@ -182,19 +159,18 @@ export const showContactUs: boolean = true;
 
 // See object prototype on /types/section.ts page
 export const seoData: SEODataType = {
-  title: "Hanzla Tauqeer",
-  description:
-    "A passionate Full Stack Web Developer and Blockchain Developer.",
-  author: "Hanzla Tauqeer",
+  title: "Ahmad Sofanati",
+  description: "A passionate Full Stack Web Developer",
+  author: "Ahmad Sofanati",
   image: "https://avatars3.githubusercontent.com/u/59178380?v=4",
   url: "https://developer-portfolio-1hanzla100.vercel.app",
   keywords: [
-    "Hanzla",
-    "Hanzla Tauqeer",
+    "Ahmad",
+    "Ahmad Sofanati",
     "@1hanzla100",
     "1hanzla100",
     "Portfolio",
     "Hanzla Portfolio ",
-    "Hanzla Tauqeer Portfolio",
+    "Ahmad Sofanati Portfolio",
   ],
 };

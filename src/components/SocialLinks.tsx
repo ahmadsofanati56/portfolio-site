@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export const SocialLinks = () => {
   return (
     <div className="btn-wrapper my-6 ">
-      {socialLinks.url && (
+      {socialLinks.github && (
         <Button
           className="rounded-circle w-12"
           color="dark"

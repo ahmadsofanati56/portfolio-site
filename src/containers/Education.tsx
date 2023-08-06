@@ -9,7 +9,7 @@ export const Education = () => {
       <section className="section  my-5 bg-gradient-to-r  from-cyan-500 to-blue-500 pb-0">
         <Container>
           <div className="d-flex  px-3">
-            <div className=" avatar mt-10 h-20">
+            <div className=" avatar mt-10 h-16 w-16 ">
               <div className=" d-flex flex-col items-center justify-center rounded-full bg-white shadow">
                 <VscBook className="h-12 w-12 " color="lightblue" />
               </div>

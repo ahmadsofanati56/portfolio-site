@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { IconType } from "react-icons";
+
 import {
   BsEnvelope,
   BsEnvelopeFill,
@@ -23,29 +24,43 @@ import {
   InputGroupText,
   Row,
 } from "reactstrap";
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  const data = new FormData(e.currentTarget);
-  try {
-    const response = await fetch("/api/contact", {
-      method: "post",
-      body: new URLSearchParams(data as any),
-    });
-    if (!response.ok) {
-      throw new Error(`Invalid response: ${response.status}`);
-    }
-    alert("Thanks for contacting us, we will get back to you soon!");
-  } catch (err) {
-    console.error(err);
-    alert("We can't submit the form, try again later?");
-  }
-}
+
 export const ContactUs = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+    e.preventDefault();
+    let data = {
+      name,
+      email,
+      message,
+    };
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Respone received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    });
+  };
   return (
     <>
       <section className="section section-lg section-shaped my-20">
-        <form ref={form} onSubmit={handleSubmit}>
+        <form ref={form}>
           <Container className="d-flex justify-center  ">
             <Card className="  w-full shadow-lg sm:w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
               <CardBody className=" w-full  p-4">
@@ -65,7 +80,11 @@ export const ContactUs = () => {
                         type="text"
                         name="name"
                         placeholder="Your name"
+                        onChange={(e) => {
+                          setName(e.target.value);
+                        }}
                         className="max-w-xlg input mt-1 w-full pl-10 pr-3 shadow-md "
+                        required
                       />
                     </div>
                     <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
@@ -73,20 +92,40 @@ export const ContactUs = () => {
                       <input
                         type="text"
                         name="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        required
                         placeholder="Email address"
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
                         className="max-w-xlg input mt-3 w-full pl-10 pr-3 shadow-md"
                       />
                     </div>
 
                     <textarea
                       name="message"
-                      className="textarea mt-3 w-full shadow-md"
+                      className="textarea mt-3 w-full text-gray-400 shadow-md focus-within:text-gray-600 "
+                      required
                       placeholder="Type a message..."
+                      onChange={(e) => {
+                        setMessage(e.target.value);
+                      }}
                     ></textarea>
-                    <div className="mt-4 rounded-md bg-black opacity-90 ">
-                      <button className=" btn w-full p-0  " type="submit">
+                    <div className="mt-4 rounded-md bg-black  opacity-90 ">
+                      <input
+                        type="submit"
+                        className="btn w-full text-white"
+                        onClick={(e) => {
+                          handleSubmit(e);
+                        }}
+                      />
+                      {/* <button
+                        className=" btn w-full p-0  "
+                        type="submit"
+                        onClick={(e) => handleSubmit}
+                      >
                         <b className="text-white">Send Message</b>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </Col>
