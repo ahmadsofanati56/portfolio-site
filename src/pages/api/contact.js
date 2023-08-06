@@ -1,6 +1,6 @@
 const express = require('express');
 
-export default function (req , res) {
+export default function (req, res) {
   require('dotenv').config()
 
   let nodemailer= require('nodemailer')
